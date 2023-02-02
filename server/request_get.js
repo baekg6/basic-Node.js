@@ -12,7 +12,7 @@ let server = http.createServer(function (request, response) {
   let parsedQuery = querystring.parse(parsedUrl.query, '&', '=');
   // console.log('parsedQuery > ', parsedQuery);
 
-  response.writeHead(200, { 'Content-type': 'text/plain' });
+  response.writeHead(200, { 'Content-type': 'text/plain;charset=UTF-8' });
   for (const [key, value] of Object.entries(parsedQuery)) {
     response.write(`${key}의 값은 ${value}\n`);
   }
